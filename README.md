@@ -1,4 +1,4 @@
-# gd
+# gv
 
 A, maybe one day, go vendoring assistant.  Its a tool that **you** can use to help automate vendoring chores like:
 
@@ -14,7 +14,7 @@ A, maybe one day, go vendoring assistant.  Its a tool that **you** can use to he
 - Not like npm, not bundler.  But carry over some of the ux and concepts that work exceptionally well from existing tools.
 - Avoid NIH.  Leverage the best vendoring description standard to date: `package.json`
 - Take care of your own.  Don't dictate a vendoring strategy on dependencies deps, but be compatible with the default, unvendored strategy.
-- Hide your vendoring strategy.  Don't dictate how consumers consume you.  This means `go get` should always work on `gd`'d packages.
+- Hide your vendoring strategy.  Don't dictate how consumers consume you.  This means `go get` should always work on `gv`'d packages.
 - Keep it simple.  Say it again.
 
 ## Background
@@ -41,7 +41,7 @@ The `go get` command reads the import statements in a package, and then retrieve
 
 Here are some other interesting properties:
 
-- `go get` fetches a new dependency into $GOPATH.  It never places it in the vendor directory, so `gd` must handle this somehow.
+- `go get` fetches a new dependency into $GOPATH.  It never places it in the vendor directory, so `gv` must handle this somehow.
 - `go get` fetches submodules recursively.  This mechanism provides the only built in way to specify a particular version of a dependency through the use of pinned git submodules.
 - Any missing packages end up in the global $GOPATH.  This isn't great, but its the default behavior.  Don't try to guard this.  This can only be solved through vendoring, so dependencies written to guard for this are the solution.
 
